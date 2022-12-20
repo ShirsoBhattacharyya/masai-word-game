@@ -15,7 +15,7 @@ router.post("/newuser", async (req, res) => {
 router.get("/ranking", async (req, res) => {
   try {
     let newUser = await UserModel.find({});
-    newUser = newUser.sort((a, b) => b - a);
+    newUser = newUser.sort((a, b) => b.score - a.score);
     res.json({ message: "success", response: newUser });
   } catch (e) {
     res.status(500).json({ message: "error", response: e.message });
