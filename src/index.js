@@ -10,7 +10,7 @@ server.use(express.json());
 server.use(cors());
 server.use(express.urlencoded({ extended: true }));
 server.get("/", (req, res) => {
-  res.send("Welcome to Masai Jobs API");
+  res.send("Welcome to Masai Word Game API");
 });
 server.use('/user',userRouter);
 server.use('/word',wordRouter);
